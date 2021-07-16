@@ -52,7 +52,8 @@ public class EmployeeControllerTest extends AbstractTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.jobTitle").value(createEmployeeRequest.getJobTitle()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.jobTitle")
+                                                .value(createEmployeeRequest.getJobTitle()))
                 .andReturn();
     }
 
@@ -81,7 +82,8 @@ public class EmployeeControllerTest extends AbstractTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value(updateEmployeeRequest.getFirstName()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.firstName")
+                                                .value(updateEmployeeRequest.getFirstName()))
                 .andReturn();
     }
 }

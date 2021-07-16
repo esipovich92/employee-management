@@ -19,7 +19,7 @@ Employee Management Service allows to create/update/view employees
 ## Swagger
 
 Swagger is accessible after the app started by the following url:
-http://localhost:8080/management/swagger-ui.html
+- http://localhost:8080/management/swagger-ui.html
 
 ## Requests examples
 Create employee:

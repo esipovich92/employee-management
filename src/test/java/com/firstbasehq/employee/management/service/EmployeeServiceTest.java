@@ -8,11 +8,12 @@ import com.firstbasehq.employee.management.dto.request.UpdateEmployeeRequest;
 import com.firstbasehq.employee.management.integrations.randomuser.RandomUserClient;
 import com.firstbasehq.employee.management.integrations.randomuser.RandomUserDTO;
 import com.firstbasehq.employee.management.integrations.randomuser.RandomUserException;
-import com.firstbasehq.employee.management.integrations.randomuser.RandomUserNameDTO;
-import com.firstbasehq.employee.management.integrations.randomuser.RandomUserPictureDTO;
 import com.firstbasehq.employee.management.integrations.randomuser.RandomUserWrapperDTO;
 import com.firstbasehq.employee.management.model.Employee;
 import com.firstbasehq.employee.management.repository.EmployeeRepository;
+import javax.persistence.EntityNotFoundException;
+import java.util.Collections;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -21,10 +22,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-
-import javax.persistence.EntityNotFoundException;
-import java.util.Collections;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
