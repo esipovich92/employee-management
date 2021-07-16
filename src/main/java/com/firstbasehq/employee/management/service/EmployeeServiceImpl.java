@@ -60,9 +60,11 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @throws RandomUserException if not enough data from third-party
      */
     public EmployeeDTO saveEmployee(CreateEmployeeRequest createEmployeeRequest) {
-        RandomUserWrapperDTO randomUserWrapper = randomUserClient.getRandomUser();
-        RandomUserDTO randomUserDTO = randomUserWrapper.getResults()[0];
-        if (randomUserDTO == null) {
+        RandomUserDTO randomUserDTO;
+        try {
+            RandomUserWrapperDTO randomUserWrapper = randomUserClient.getRandomUser();
+            randomUserDTO = randomUserWrapper.getResults()[0];
+        } catch (Exception e) {
             throw new RandomUserException("There was a problem while accessing downstream system. Please try again later");
         }
         Employee employee = Employee.builder()

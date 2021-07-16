@@ -94,10 +94,7 @@ public class EmployeeServiceTest {
     @Test(expected = RandomUserException.class)
     public void saveEmployee_randomUserFailure() {
         CreateEmployeeRequest createEmployeeRequest = TestUtils.buildCreateEmployeeRequest();
-        RandomUserWrapperDTO randomUserWrapperDTO = RandomUserWrapperDTO.builder()
-                .results(new RandomUserDTO[1])
-                .build();
-        when(randomUserClient.getRandomUser()).thenReturn(randomUserWrapperDTO);
+        when(randomUserClient.getRandomUser()).thenReturn(RandomUserWrapperDTO.builder().build());
 
         employeeService.saveEmployee(createEmployeeRequest);
     }
