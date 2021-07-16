@@ -9,10 +9,16 @@ Employee Management Service allows to create/update/view employees
 - Spring Boot 2.3.12
 - H2 DB
 
-## DB configuration
+## Running the app
 
-- H2 console url: http://localhost:8080/h2-console
-- db url: jdbc:h2:mem:employee
+1. Checkout the project
+2. Run `mvn clean package`
+3. Run the app
+
+## Accessing H2 console
+
+- H2 console url: http://localhost:8080/management/h2-console
+- JDBC url: jdbc:h2:mem:employee
 - username: admin
 - password: changeIt
 
